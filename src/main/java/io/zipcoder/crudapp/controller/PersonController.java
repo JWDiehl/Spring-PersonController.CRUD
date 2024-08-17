@@ -33,4 +33,14 @@ public class PersonController {
         return new ResponseEntity<>(service.getPersonList(), HttpStatus.OK);
     }
 
+    @PutMapping("/people/{id}")
+    public ResponseEntity<Person> update(@PathVariable("id") Integer id, @RequestBody Person person) {
+        return new ResponseEntity<>(service.updatePerson(id, person), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/people/{id}")
+    public ResponseEntity<Boolean> delete(@PathVariable("id") Integer id) {
+        return new ResponseEntity<>(service.deletePerson(id), HttpStatus.NO_CONTENT);
+    }
+
 }
