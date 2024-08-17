@@ -1,13 +1,16 @@
 package io.zipcoder.crudapp.controller;
 
 import io.zipcoder.crudapp.model.Person;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class PersonController {
 
 
-
-    public void createPerson(Person person) {
-        return
+    @PostMapping
+    public Person createPerson(Person person) {
+        return person;
 
     }
 
