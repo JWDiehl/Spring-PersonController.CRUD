@@ -26,8 +26,13 @@ public class PersonService {
 
     public Person updatePerson(Integer id, Person person) {
         Person person1 = repository.findOne(id);
-        person1.setFirstName(person1.getFirstName());
-        person1.setLastName(person1.getLastName());
+        person1.setFirstName(person.getFirstName());
+        person1.setLastName(person.getLastName());
         return repository.save(person1);
+    }
+
+    public boolean deletePerson(Integer id) {
+        repository.delete(id);
+        return true;
     }
 }
